@@ -9,66 +9,54 @@ interface LogoProps {
 
 const Logo = ({ className, showText = true, size = "md", variant = "full" }: LogoProps) => {
   const sizes = {
-    sm: { icon: 32, text: "text-lg" },
-    md: { icon: 40, text: "text-xl" },
-    lg: { icon: 56, text: "text-2xl" },
-    xl: { icon: 72, text: "text-3xl" },
+    sm: { icon: 36, text: "text-base", subtext: "text-xs" },
+    md: { icon: 44, text: "text-lg", subtext: "text-xs" },
+    lg: { icon: 56, text: "text-xl", subtext: "text-sm" },
+    xl: { icon: 72, text: "text-2xl", subtext: "text-base" },
   };
 
-  const { icon: iconSize, text: textSize } = sizes[size];
+  const { icon: iconSize, text: textSize, subtext: subtextSize } = sizes[size];
 
   return (
     <div className={cn("flex items-center gap-3", className)}>
-      {/* Logo Icon - Stylized Y with leaf/sprout element */}
+      {/* Logo Icon - Wheat field with sun */}
       <svg
         width={iconSize}
         height={iconSize}
-        viewBox="0 0 64 64"
+        viewBox="0 0 60 60"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="flex-shrink-0"
       >
-        {/* Background circle */}
-        <circle 
-          cx="32" 
-          cy="32" 
-          r="30" 
+        {/* Sun/horizon circle */}
+        <circle cx="30" cy="38" r="16" className="fill-accent" />
+        
+        {/* Green field/hill */}
+        <path
+          d="M5 48 Q15 35 30 38 Q45 41 55 35 L55 55 L5 55 Z"
           className="fill-primary"
         />
         
-        {/* Stylized Y shape forming from two leaves meeting at center */}
-        <path
-          d="M32 52V36"
-          className="stroke-primary-foreground"
-          strokeWidth="4"
-          strokeLinecap="round"
-        />
-        
-        {/* Left branch of Y with leaf curve */}
-        <path
-          d="M32 36L18 18C16 15 18 12 22 14C26 16 30 24 32 36"
-          className="fill-primary-foreground"
-        />
-        
-        {/* Right branch of Y with leaf curve */}
-        <path
-          d="M32 36L46 18C48 15 46 12 42 14C38 16 34 24 32 36"
-          className="fill-primary-foreground"
-        />
-        
-        {/* Small sprout/leaf detail at top */}
-        <path
-          d="M32 14C32 14 36 10 40 12C36 14 34 18 32 22C30 18 28 14 24 12C28 10 32 14 32 14Z"
-          className="fill-accent"
-        />
-        
-        {/* Subtle horizon line representing fields */}
-        <path
-          d="M12 44C16 42 24 43 32 42C40 41 48 42 52 44"
-          className="stroke-primary-foreground/30"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
+        {/* Wheat stalks */}
+        <g className="fill-primary">
+          {/* Left wheat */}
+          <ellipse cx="20" cy="20" rx="3" ry="6" transform="rotate(-15 20 20)" />
+          <ellipse cx="18" cy="24" rx="2.5" ry="5" transform="rotate(-25 18 24)" />
+          <ellipse cx="22" cy="24" rx="2.5" ry="5" transform="rotate(5 22 24)" />
+          <rect x="19" y="22" width="2" height="16" rx="1" />
+          
+          {/* Center wheat */}
+          <ellipse cx="30" cy="14" rx="3.5" ry="7" />
+          <ellipse cx="27" cy="19" rx="3" ry="5.5" transform="rotate(-20 27 19)" />
+          <ellipse cx="33" cy="19" rx="3" ry="5.5" transform="rotate(20 33 19)" />
+          <rect x="29" y="17" width="2" height="20" rx="1" />
+          
+          {/* Right wheat */}
+          <ellipse cx="40" cy="20" rx="3" ry="6" transform="rotate(15 40 20)" />
+          <ellipse cx="42" cy="24" rx="2.5" ry="5" transform="rotate(25 42 24)" />
+          <ellipse cx="38" cy="24" rx="2.5" ry="5" transform="rotate(-5 38 24)" />
+          <rect x="39" y="22" width="2" height="16" rx="1" />
+        </g>
       </svg>
 
       {/* Text */}
@@ -77,8 +65,8 @@ const Logo = ({ className, showText = true, size = "md", variant = "full" }: Log
           <span className={cn("font-bold text-primary tracking-tight", textSize)}>
             Yiğiter
           </span>
-          <span className="text-sm text-muted-foreground font-medium -mt-0.5">
-            Tarım Ürünleri
+          <span className={cn("text-muted-foreground font-medium -mt-0.5", subtextSize)}>
+            Tarımsal Ürünleri
           </span>
         </div>
       )}

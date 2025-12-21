@@ -9,11 +9,9 @@ const Navbar = () => {
   const location = useLocation();
 
   const navLinks = [
-    { to: "/", label: "Ana Sayfa" },
+    { to: "/", label: "Anasayfa" },
+    { to: "/is-ortaklarimiz", label: "Ürünler" },
     { to: "/hakkimizda", label: "Hakkımızda" },
-    { to: "/ekibimiz", label: "Ekibimiz" },
-    { to: "/is-ortaklarimiz", label: "İş Ortaklarımız" },
-    { to: "/tarim-teknolojileri", label: "Tarım Teknolojileri" },
     { to: "/iletisim", label: "İletişim" },
   ];
 
@@ -28,25 +26,31 @@ const Navbar = () => {
             <Logo size="md" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                className={`relative py-2 text-sm font-medium transition-all duration-200 ${
                   isActive(link.to)
-                    ? "text-primary bg-primary/10"
-                    : "text-foreground/80 hover:text-primary hover:bg-primary/5"
+                    ? "text-primary"
+                    : "text-foreground/80 hover:text-primary"
                 }`}
               >
                 {link.label}
+                {isActive(link.to) && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-accent" />
+                )}
               </Link>
             ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden lg:block">
             <Button 
               asChild 
-              variant="default" 
-              className="ml-4 bg-primary hover:bg-primary-glow"
+              className="bg-primary hover:bg-primary-glow rounded-md px-6"
             >
               <Link to="/iletisim">Bize Ulaşın</Link>
             </Button>
