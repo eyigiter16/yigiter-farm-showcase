@@ -10,10 +10,10 @@ interface LogoProps {
 
 const Logo = ({ className, size = "md", variant = "full" }: LogoProps) => {
   const sizes = {
-    sm: { height: 56 },
-    md: { height: 80 },
-    lg: { height: 100 },
-    xl: { height: 120 },
+    sm: { height: 72 },
+    md: { height: 104 },
+    lg: { height: 130 },
+    xl: { height: 156 },
   };
 
   const { height } = sizes[size];

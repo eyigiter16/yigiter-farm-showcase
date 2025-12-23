@@ -10,7 +10,8 @@ const Navbar = () => {
 
   const navLinks = [
     { to: "/", label: "Anasayfa" },
-    { to: "/is-ortaklarimiz", label: "Ürünler" },
+    { to: "/urunler", label: "Ürünler" },
+    { to: "/is-ortaklarimiz", label: "İş Ortaklarımız" },
     { to: "/hakkimizda", label: "Hakkımızda" },
     { to: "/iletisim", label: "İletişim" },
   ];
@@ -20,7 +21,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-28">
           {/* Logo */}
           <Link to="/" className="group hover:opacity-90 transition-opacity">
             <Logo size="md" />
