@@ -70,7 +70,7 @@ const Home = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              Çiftçiler, bayiler ve üreticiler için <strong className="text-foreground">güvenilir tarımsal ürünler, yemler</strong> ve ekipman çözümleri sunuyoruz.
+              Çiftçiler, bayiler ve üreticiler için <strong className="text-foreground">tarımsal ürünler, hayvan yemleri ve mama çözümleri</strong> sunuyoruz.
             </p>
             
             <div className="animate-fade-up" style={{ animationDelay: "0.4s" }}>
@@ -79,7 +79,7 @@ const Home = () => {
                 size="lg"
                 className="bg-primary hover:bg-primary-glow text-primary-foreground text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all group"
               >
-                <Link to="/is-ortaklarimiz" className="flex items-center gap-2">
+                <Link to="/urunler" className="flex items-center gap-2">
                   Ürünlerimizi Keşfedin
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>

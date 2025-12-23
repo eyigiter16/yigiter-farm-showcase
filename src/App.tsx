@@ -10,6 +10,7 @@ import Team from "./pages/Team";
 import Partners from "./pages/Partners";
 import Technologies from "./pages/Technologies";
 import Contact from "./pages/Contact";
+import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/hakkimizda" element={<About />} />
             <Route path="/ekibimiz" element={<Team />} />
+            <Route path="/urunler" element={<Products />} />
             <Route path="/is-ortaklarimiz" element={<Partners />} />
             <Route path="/tarim-teknolojileri" element={<Technologies />} />
             <Route path="/iletisim" element={<Contact />} />

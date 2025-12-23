@@ -9,15 +9,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="bg-background/10 p-3 rounded-lg inline-block">
+            <div className="bg-background/10 p-4 rounded-lg inline-block">
               <img
                 src={logoImage}
                 alt="Yiğiter Tarımsal Ürünleri"
-                className="h-12 w-auto object-contain"
+                className="h-20 w-auto object-contain"
               />
             </div>
             <p className="text-sm opacity-80 leading-relaxed">
-              Tarımın güçlü yarını için, bizimle verimliliği keşfedin. Modern tarım teknolojileri ve kaliteli ürünlerle hizmetinizdeyiz.
+              Yiğiter Tarımsal Ürünleri – Tarım ve hayvancılıkta güvenilir çözüm ortağınız.
             </p>
           </div>
 
@@ -28,6 +28,7 @@ const Footer = () => {
               {[
                 { to: "/", label: "Ana Sayfa" },
                 { to: "/hakkimizda", label: "Hakkımızda" },
+                { to: "/urunler", label: "Ürünler" },
                 { to: "/ekibimiz", label: "Ekibimiz" },
                 { to: "/is-ortaklarimiz", label: "İş Ortaklarımız" },
               ].map((link) => (
@@ -49,10 +50,10 @@ const Footer = () => {
             <ul className="space-y-2">
               {[
                 "Zirai İlaç",
-                "Gübre Çözümleri",
+                "Gübre",
                 "Tohum",
-                "Damla Sulama",
-                "Tarım Teknolojileri",
+                "Hayvan Yemleri",
+                "Kedi & Köpek Mamaları",
               ].map((service) => (
                 <li key={service}>
                   <span className="text-sm opacity-80">{service}</span>
@@ -67,15 +68,22 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <Phone className="h-4 w-4 mt-1 flex-shrink-0" />
-                <span className="text-sm opacity-80">+90 XXX XXX XX XX</span>
+                <a href="tel:+905448474121" className="text-sm opacity-80 hover:opacity-100 hover:underline transition-opacity">
+                  +90 544 847 41 21
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="h-4 w-4 mt-1 flex-shrink-0" />
-                <span className="text-sm opacity-80">info@yigitertarim.com.tr</span>
+                <a href="mailto:yigitertarimsal@gmail.com" className="text-sm opacity-80 hover:opacity-100 hover:underline transition-opacity">
+                  yigitertarimsal@gmail.com
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                <span className="text-sm opacity-80">Adres Bilgisi, Şehir, Türkiye</span>
+                <span className="text-sm opacity-80">
+                  Çınarlı Mah. Hayrabolu Cd. No:9/10<br />
+                  59030 Süleymanpaşa / Tekirdağ
+                </span>
               </li>
             </ul>
             <div className="flex gap-3 mt-4">
