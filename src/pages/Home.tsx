@@ -1,26 +1,46 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Sprout, Handshake, HeadphonesIcon } from "lucide-react";
-import heroImage from "@/assets/hero-tractor-wheat.jpg";
-import productImage from "@/assets/product-protection.jpg";
+import { ArrowRight, HeadphonesIcon } from "lucide-react";
+import heroImage from "@/assets/hero-tractor.png";
+import cropsImage from "@/assets/crops-field.png";
+import cattleImage from "@/assets/cattle-feeding.png";
+import handshakeIcon from "@/assets/icon-handshake.png";
 
 const Home = () => {
   const features = [
     {
-      icon: Sprout,
+      icon: (
+        <svg viewBox="0 0 80 80" className="w-16 h-16">
+          <circle cx="40" cy="60" r="18" fill="hsl(var(--primary))" opacity="0.15"/>
+          <path d="M20 65 Q30 55 40 58 Q50 61 60 55 L60 72 L20 72 Z" fill="hsl(var(--primary))" opacity="0.3"/>
+          <g fill="hsl(var(--accent))">
+            <ellipse cx="30" cy="28" rx="3" ry="7" transform="rotate(-15 30 28)" />
+            <ellipse cx="27" cy="34" rx="2.5" ry="5.5" transform="rotate(-25 27 34)" />
+            <ellipse cx="33" cy="34" rx="2.5" ry="5.5" transform="rotate(5 33 34)" />
+            <rect x="29" y="32" width="2" height="20" rx="1" fill="hsl(var(--primary))"/>
+          </g>
+          <g fill="hsl(var(--accent))">
+            <ellipse cx="50" cy="28" rx="3" ry="7" transform="rotate(15 50 28)" />
+            <ellipse cx="53" cy="34" rx="2.5" ry="5.5" transform="rotate(25 53 34)" />
+            <ellipse cx="47" cy="34" rx="2.5" ry="5.5" transform="rotate(-5 47 34)" />
+            <rect x="49" y="32" width="2" height="20" rx="1" fill="hsl(var(--primary))"/>
+          </g>
+          <circle cx="40" cy="18" r="8" fill="hsl(var(--accent))" opacity="0.3"/>
+        </svg>
+      ),
       title: "Geniş Ürün Yelpazesi",
-      description: "Tarımsal ihtiyaçlarınıza yönelik geniş ürün yelpazesi ve ekipman çeşitliliği sunuyoruz.",
+      description: "Tarım ve hayvancılık faaliyetleriniz için tohumdan gübreye, yemden ekipmana taze geniş bir ürün yelpazesi sunuyoruz.",
     },
     {
-      icon: Handshake,
+      iconImage: handshakeIcon,
       title: "Güvenilir Tedarik",
-      description: "Zamanında teslimat ve kaliteli ürün garantisi ile güvenilir bir iş ortağıyız.",
+      description: "Zamanında teslimat, kaliteli ürünler ve sürdürülebilir tedarik anlayışıyla uzun vadeli bir iş ortağı olmayı hedefliyoruz.",
     },
     {
-      icon: HeadphonesIcon,
+      icon: <HeadphonesIcon className="w-12 h-12 text-primary" />,
       title: "Satış Sonrası Destek",
-      description: "Ürünlerimiz için uzman teknik destek ve bakım hizmetleri sağlıyoruz.",
+      description: "Satış sonrası süreçte teknik destek ve danışmanlık hizmetleriyle her zaman yanınızdayız.",
     },
   ];
 
@@ -50,7 +70,7 @@ const Home = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              Çiftçiler, bayiler ve üreticiler için kaliteli tarım ürünleri ve ekipmanları sağlıyoruz.
+              Çiftçiler, bayiler ve üreticiler için <strong className="text-foreground">güvenilir tarımsal ürünler, yemler</strong> ve ekipman çözümleri sunuyoruz.
             </p>
             
             <div className="animate-fade-up" style={{ animationDelay: "0.4s" }}>
@@ -68,31 +88,28 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Decorative wheat elements at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 bg-background relative">
-        {/* Subtle wave decoration at top */}
-        <div className="absolute top-0 left-0 right-0 overflow-hidden">
+        {/* Decorative wave at bottom */}
+        <div className="absolute bottom-0 left-0 right-0">
           <svg
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
-            className="w-full h-16 text-muted/30"
+            className="w-full h-24 text-background"
           >
             <path
-              d="M0,0 C300,100 900,100 1200,0 L1200,120 L0,120 Z"
+              d="M0,40 Q300,100 600,60 T1200,80 L1200,120 L0,120 Z"
               fill="currentColor"
             />
           </svg>
         </div>
+      </section>
 
-        <div className="container mx-auto px-4 pt-8">
+      {/* Features Section */}
+      <section className="py-20 bg-background relative">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-foreground">Yiğiter Tarımsal Ürünleri'ne</span>{" "}
-              <span className="text-primary">Hoşgeldiniz</span>
+              <span className="text-foreground">Tarım ve Hayvancılıkta</span>{" "}
+              <span className="text-primary">Güvenilir Çözümler</span>
             </h2>
           </div>
 
@@ -104,10 +121,18 @@ const Home = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-8 text-center">
-                  <div className="mb-6 mx-auto w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <feature.icon className="h-10 w-10 text-primary" />
+                  <div className="mb-6 mx-auto w-24 h-24 flex items-center justify-center">
+                    {feature.iconImage ? (
+                      <img 
+                        src={feature.iconImage} 
+                        alt={feature.title}
+                        className="w-20 h-20 object-contain"
+                      />
+                    ) : (
+                      feature.icon
+                    )}
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">
+                  <h3 className="text-xl font-semibold mb-3 text-primary">
                     {feature.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -120,92 +145,66 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Product Protection Section */}
+      {/* Products Section */}
       <section className="py-20 bg-muted/20 relative overflow-hidden">
         {/* Decorative wave at top */}
         <div className="absolute top-0 left-0 right-0">
           <svg
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
-            className="w-full h-20 text-background"
+            className="w-full h-16 text-background"
           >
             <path
-              d="M0,60 Q300,120 600,60 T1200,60 L1200,0 L0,0 Z"
+              d="M0,60 Q300,20 600,60 T1200,40 L1200,0 L0,0 Z"
               fill="currentColor"
             />
           </svg>
         </div>
 
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative animate-fade-up">
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
+        <div className="container mx-auto px-4 pt-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-foreground">Tarım ve Hayvancılıkta</span>{" "}
+              <span className="text-primary">Güvenilir Çözümler</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Yiğiter Tarımsal Ürünleri olarak tarım ve hayvancılık sektörünün ihtiyaçlarına yönelik kaliteli ürünler sunuyor, üretimin her aşamasında müşterilerimize destek oluyoruz.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Crops Card */}
+            <div className="rounded-2xl overflow-hidden shadow-xl group">
+              <div className="relative h-72 overflow-hidden">
                 <img
-                  src={productImage}
-                  alt="Tarımsal ürün koruma"
-                  className="w-full h-[400px] object-cover"
+                  src={cropsImage}
+                  alt="Tarımsal Ürünler"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-background">
+                  <h3 className="text-2xl font-bold">Tarımsal Ürünler</h3>
+                  <p className="opacity-90">Tohum, gübre ve ilaç çözümleri</p>
+                </div>
               </div>
-              {/* Decorative element */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
-              <div className="absolute -top-4 -left-4 w-32 h-32 bg-accent/20 rounded-full blur-2xl" />
             </div>
 
-            <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Ürünleri Koruma
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Dünya standartlarında güvenli tarım ürünleri ile bitkilerinizi koruyun, 
-                veriminizi artırın ve kaliteli hasat elde edin.
-              </p>
-              
-              <div className="grid grid-cols-3 gap-4 pt-4">
-                <div className="aspect-video rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                  <img
-                    src={heroImage}
-                    alt="Tarım makinaları"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="aspect-video rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                  <img
-                    src={productImage}
-                    alt="Tarım ekipmanları"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="aspect-video rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow bg-primary/10 flex items-center justify-center">
-                  <Sprout className="h-8 w-8 text-primary" />
+            {/* Cattle Card */}
+            <div className="rounded-2xl overflow-hidden shadow-xl group">
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src={cattleImage}
+                  alt="Hayvancılık Ürünleri"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-background">
+                  <h3 className="text-2xl font-bold">Hayvancılık Ürünleri</h3>
+                  <p className="opacity-90">Kaliteli yem ve bakım ürünleri</p>
                 </div>
               </div>
-
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="mt-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              >
-                <Link to="/tarim-teknolojileri">
-                  Daha Fazla Bilgi
-                </Link>
-              </Button>
             </div>
           </div>
-        </div>
-
-        {/* Decorative wave at bottom */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-            className="w-full h-20 text-background rotate-180"
-          >
-            <path
-              d="M0,60 Q300,0 600,60 T1200,60 L1200,120 L0,120 Z"
-              fill="currentColor"
-            />
-          </svg>
         </div>
       </section>
 
