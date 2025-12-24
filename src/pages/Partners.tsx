@@ -1,52 +1,49 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Building2, Handshake } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Handshake, Shield, Leaf, Flower2, Droplets, Wheat, PawPrint } from "lucide-react";
 
 const Partners = () => {
-  const partners = [
+  const partnerGroups = [
     {
-      name: "Bayer Tarım",
-      category: "Zirai İlaç",
-      description: "Dünya çapında tanınmış, bitki koruma ürünleri ve tohumculuk alanında lider firma.",
+      title: "Zirai İlaç",
+      subtitle: "Bitki Koruma Ürünleri",
+      icon: Shield,
+      description: "Bitki sağlığı ve verim artışına yönelik, ruhsatlı ve güvenilir ürünler sunan yerli ve uluslararası firmalarla çalışmaktayız.",
+      companies: ["Adama", "Syngenta", "Bayer", "BASF", "Corteva", "Doğal Kimya", "Ferbis", "UPL", "FMC", "Hektaş", "Safa Tarım", "Sumiagro", "Sunset", "Agrobest"],
     },
     {
-      name: "Syngenta",
-      category: "Tohum & İlaç",
-      description: "Yenilikçi tarım çözümleri ve sürdürülebilir tarım teknolojileri konusunda global lider.",
+      title: "Tohum",
+      subtitle: "Tarla Bitkileri",
+      icon: Wheat,
+      description: "Bölge iklim ve toprak yapısına uygun, sertifikalı ve yüksek verimli tarla bitkileri tohumları tedarik etmekteyiz.",
+      companies: ["LG", "Pioneer", "Tasaco", "Ekmen Tarım", "Yıldız Tohum", "Agromar", "Dekalb", "Hayat Tohum", "Syngenta", "Tekcan Tohumculuk", "2A Tohumculuk", "Alfa Tohum", "Trakya Tarım ve Veterinerlik", "Huntas", "Doruk Tohumculuk"],
     },
     {
-      name: "Netafim",
-      category: "Sulama Sistemleri",
-      description: "Damla sulama teknolojilerinde dünya lideri, su tasarrufu ve verimlilik uzmanı.",
+      title: "Tohum",
+      subtitle: "Bahçe & Sera",
+      icon: Flower2,
+      description: "Açık alan, bahçe ve sera üretimine uygun; kaliteli, homojen ve yüksek performanslı sebze tohumları sunmaktayız.",
+      companies: ["Agromar", "Seminis", "Bursa Tohumculuk", "İstanbul Tohumculuk", "Arzuman", "Syngenta", "Naz Tohum", "Altın Tohumculuk", "Zeta Tohumculuk", "Küçükçiftlik Tohumculuk", "Asgen Sebze Tohumları", "Burgen Tohum", "Balıkesir Tohum", "Fito", "Sakata", "May Tohumculuk", "Dr Tohumculuk"],
     },
     {
-      name: "Yara Türkiye",
-      category: "Gübre",
-      description: "Mineral gübre üretimi ve tarımsal besin çözümleri konusunda uzman firma.",
+      title: "Gübre",
+      subtitle: "Mineral & Organomineral",
+      icon: Droplets,
+      description: "Bitkisel üretimde verim ve kaliteyi artırmaya yönelik mineral, organomineral ve özel amaçlı gübre çeşitleri sunmaktayız.",
+      companies: ["Gemlik", "İGSAŞ", "Toros", "Seleda", "Dr. Tarsa", "Bontera", "Biosen", "Altıntar", "Milagro", "Hekagro", "Şahtar Tarım", "Everris", "İsaş Doğa Bilimleri", "Sofbey SA"],
     },
     {
-      name: "BASF Tarım",
-      category: "Zirai İlaç & Tohum",
-      description: "Kimya ve tarım sektöründe inovatif çözümler sunan global şirket.",
+      title: "Yem",
+      subtitle: "Hayvancılık Ürünleri",
+      icon: Leaf,
+      description: "Hayvancılık faaliyetlerinde sağlıklı gelişim ve verimlilik için kaliteli yem ürünleri tedarik etmekteyiz.",
+      companies: ["Optima", "Özlem Yem", "Maysan"],
     },
     {
-      name: "Ege Gübre",
-      category: "Gübre",
-      description: "Türkiye'nin önde gelen gübre üreticilerinden, organik ve kimyevi gübre uzmanı.",
-    },
-    {
-      name: "Toro Tarım",
-      category: "Tarım Makinaları",
-      description: "Modern tarım makinaları ve ekipmanları konusunda yerli üretici firma.",
-    },
-    {
-      name: "Corteva Agriscience",
-      category: "Tohum & Koruma",
-      description: "Bitki koruma ürünleri ve tohum teknolojilerinde dünya çapında hizmet veren firma.",
-    },
-    {
-      name: "May Tohum",
-      category: "Tohum",
-      description: "Yerli ve hibrit tohum üretiminde Türkiye'nin lider firmalarından.",
+      title: "Mama",
+      subtitle: "Evcil Hayvan Ürünleri",
+      icon: PawPrint,
+      description: "Kedi ve köpekler için güvenilir ve besleyici mama ürünleri sunmaktayız.",
+      companies: ["Lider Pet Food"],
     },
   ];
 
@@ -64,7 +61,7 @@ const Partners = () => {
             İş Ortaklarımız
           </h1>
           <p className="text-xl opacity-95 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Sektörün lider firmalarıyla iş birliği içinde, kaliteli ürünleri üreticilerimize sunuyoruz.
+            Sektörün güvenilir firmalarıyla iş birliği içinde, kaliteli ürünleri üreticilerimize sunuyoruz.
           </p>
         </div>
       </section>
@@ -73,41 +70,59 @@ const Partners = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Yiğiter Tarım Ürünleri olarak, dünya çapında tanınmış ve Türkiye'nin önde gelen 
-              tarım firmaları ile iş birliği yapıyoruz. Bu sayede üreticilerimize en kaliteli 
-              ürünleri, en uygun fiyatlarla ve zamanında teslim edebiliyoruz.
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Yiğiter Tarım olarak, yerli ve uluslararası alanda tanınmış firmalarla iş birliği yapıyoruz. 
+              Bu sayede üreticilerimize kaliteli ürünleri güvenilir kaynaklardan temin edebiliyoruz.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Partners Grid */}
+      {/* Partner Groups */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {partners.map((partner, index) => (
-              <Card
-                key={index}
-                className="border-2 hover:border-primary transition-all duration-300 hover:shadow-lg group animate-fade-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <CardContent className="p-6">
-                  <div className="mb-4 p-3 bg-primary/10 rounded-lg w-fit group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Building2 className="h-8 w-8 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    {partner.name}
-                  </h3>
-                  <p className="text-sm font-semibold text-primary mb-3">
-                    {partner.category}
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {partner.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-6xl mx-auto space-y-8">
+            {partnerGroups.map((group, index) => {
+              const IconComponent = group.icon;
+              return (
+                <Card
+                  key={index}
+                  className="border-2 hover:border-primary/50 transition-all duration-300 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 bg-primary/10 rounded-lg">
+                        <IconComponent className="h-8 w-8 text-primary" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-2xl font-bold text-foreground">
+                          {group.title}
+                        </CardTitle>
+                        <p className="text-sm font-medium text-primary">
+                          {group.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {group.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {group.companies.map((company, companyIndex) => (
+                        <span
+                          key={companyIndex}
+                          className="px-3 py-1.5 bg-background border border-border rounded-full text-sm font-medium text-foreground hover:bg-primary/5 transition-colors"
+                        >
+                          {company}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -116,10 +131,10 @@ const Partners = () => {
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">
-            Kaliteli Ürünler İçin Doğru Adres
+            Güvenilir Tedarik, Kaliteli Ürün
           </h2>
           <p className="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
-            İş ortaklarımızın ürünleri hakkında detaylı bilgi almak ve sipariş vermek için bizimle iletişime geçin.
+            Ürünlerimiz ve tedarikçilerimiz hakkında detaylı bilgi almak için bizimle iletişime geçin.
           </p>
         </div>
       </section>
