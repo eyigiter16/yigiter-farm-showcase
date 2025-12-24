@@ -4,16 +4,16 @@ import logoImage from "@/assets/logo-yigiter.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary/95 text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="bg-background/10 p-4 rounded-lg inline-block">
+            <div className="bg-white/95 p-4 rounded-lg inline-block shadow-md">
               <img
                 src={logoImage}
                 alt="Yiğiter Tarımsal Ürünleri"
-                className="h-20 w-auto object-contain"
+                className="h-20 w-auto object-contain drop-shadow-sm"
               />
             </div>
             <p className="text-sm opacity-80 leading-relaxed">
