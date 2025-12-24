@@ -73,7 +73,9 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">Telefon</h3>
-                        <p className="text-muted-foreground">+90 XXX XXX XX XX</p>
+                        <a href="tel:+905448474121" className="text-muted-foreground hover:text-primary transition-colors">
+                          +90 544 847 41 21
+                        </a>
                         <p className="text-sm text-muted-foreground mt-1">Hafta içi 08:00 - 18:00</p>
                       </div>
                     </div>
@@ -88,8 +90,9 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">E-posta</h3>
-                        <p className="text-muted-foreground">info@yigitertarim.com.tr</p>
-                        <p className="text-muted-foreground mt-1">destek@yigitertarim.com.tr</p>
+                        <a href="mailto:yigitertarimsal@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                          yigitertarimsal@gmail.com
+                        </a>
                       </div>
                     </div>
                   </CardContent>
@@ -104,9 +107,9 @@ const Contact = () => {
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">Adres</h3>
                         <p className="text-muted-foreground">
-                          Örnek Mahallesi, Tarım Caddesi No: 123
+                          Çınarlı Mah. Hayrabolu Cd. No:9/10
                           <br />
-                          Merkez, Şehir, Türkiye
+                          59030 Süleymanpaşa / Tekirdağ
                         </p>
                       </div>
                     </div>
