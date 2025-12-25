@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Handshake, Shield, Leaf, Flower2, Droplets, Wheat, PawPrint } from "lucide-react";
+import handshakeImage from "@/assets/icon-handshake-new.png";
 
 const Partners = () => {
   const partnerGroups = [
@@ -53,8 +54,8 @@ const Partners = () => {
       <section className="py-20 bg-gradient-to-br from-primary via-primary-glow to-secondary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-6">
-            <div className="p-4 bg-primary-foreground/10 rounded-full">
-              <Handshake className="h-16 w-16" />
+            <div className="p-4 bg-primary-foreground/20 rounded-2xl">
+              <img src={handshakeImage} alt="İş Ortaklarımız" className="h-20 w-auto" />
             </div>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-up">

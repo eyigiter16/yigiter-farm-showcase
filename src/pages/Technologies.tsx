@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Droplets, Cpu, Smartphone, Satellite, Wind, Thermometer, Sprout, Tractor } from "lucide-react";
-import technologyHero from "@/assets/technology-hero.jpg";
+import technologyHero from "@/assets/tractor-spraying.png";
 
 const Technologies = () => {
   const technologies = [

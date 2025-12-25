@@ -1,12 +1,21 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Award, Users } from "lucide-react";
+import aboutHero from "@/assets/crops-field-new.png";
 
 const About = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary via-primary-glow to-secondary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative py-20 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${aboutHero})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/85" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-up">
             Hakkımızda
           </h1>

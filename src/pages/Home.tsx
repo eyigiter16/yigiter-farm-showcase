@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, HeadphonesIcon } from "lucide-react";
-import heroImage from "@/assets/hero-tractor.png";
-import cropsImage from "@/assets/crops-field.png";
-import cattleImage from "@/assets/cattle-feeding.png";
-import handshakeIcon from "@/assets/icon-handshake.png";
+import heroImage from "@/assets/tractor-spraying.png";
+import cropsImage from "@/assets/crops-field-new.png";
+import cattleImage from "@/assets/cattle-feeding-new.png";
+import handshakeIcon from "@/assets/icon-handshake-new.png";
 
 const Home = () => {
   const features = [
