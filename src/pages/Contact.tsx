@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
@@ -40,11 +40,68 @@ const Contact = () => {
       <section className="py-20 bg-gradient-to-br from-primary via-primary-glow to-secondary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-up">
-            İletişim
+            Bize Ulaşın
           </h1>
           <p className="text-xl opacity-95 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Sorularınız için bize ulaşın. Tarım danışmanlarımız size yardımcı olmaktan mutluluk duyar.
+            Ürün seçimi, fiyat bilgisi veya teknik destek için bize ulaşın. Hızlı dönüş garantisi veriyoruz.
           </p>
+        </div>
+      </section>
+
+      {/* Quick Contact Banner */}
+      <section className="py-8 bg-[#25D366]">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-white">
+            <p className="text-lg font-medium">
+              Acil mi? WhatsApp ile anında yanıt alın:
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-[#25D366] hover:bg-white/90 rounded-full"
+            >
+              <a 
+                href="https://wa.me/905448474121?text=Merhaba,%20ürünleriniz%20hakkında%20bilgi%20almak%20istiyorum." 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <MessageCircle className="h-5 w-5" />
+                0544 847 41 21
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* When to Contact */}
+      <section className="py-12 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl font-bold text-foreground mb-6">
+              Hangi Konularda Yardımcı Olabiliriz?
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="p-6 bg-background rounded-xl border border-border">
+                <h3 className="font-semibold text-foreground mb-2">Ürün Seçimi</h3>
+                <p className="text-sm text-muted-foreground">
+                  Tarlanıza uygun gübre, ilaç veya tohum önerisi almak için bizi arayın.
+                </p>
+              </div>
+              <div className="p-6 bg-background rounded-xl border border-border">
+                <h3 className="font-semibold text-foreground mb-2">Fiyat ve Stok</h3>
+                <p className="text-sm text-muted-foreground">
+                  Güncel fiyatlar ve stok durumu hakkında bilgi almak için WhatsApp yazın.
+                </p>
+              </div>
+              <div className="p-6 bg-background rounded-xl border border-border">
+                <h3 className="font-semibold text-foreground mb-2">Teknik Destek</h3>
+                <p className="text-sm text-muted-foreground">
+                  Uygulama zamanı, dozaj ve teknik sorularınız için destek alın.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -59,8 +116,8 @@ const Contact = () => {
                   İletişim Bilgileri
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  Ürünlerimiz, hizmetlerimiz veya tarım danışmanlığı hakkında detaylı bilgi almak 
-                  için bizimle iletişime geçebilirsiniz. Uzman ekibimiz size yardımcı olmaya hazır.
+                  Tekirdağ merkezimizden Trakya genelinde hizmet veriyoruz. 
+                  Telefon veya WhatsApp ile bize ulaşabilir, mağazamızı ziyaret edebilirsiniz.
                 </p>
               </div>
 
@@ -72,11 +129,11 @@ const Contact = () => {
                         <Phone className="h-6 w-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">Telefon</h3>
-                        <a href="tel:+905448474121" className="text-muted-foreground hover:text-primary transition-colors">
+                        <h3 className="font-semibold text-foreground mb-1">Telefon / WhatsApp</h3>
+                        <a href="tel:+905448474121" className="text-lg text-primary hover:underline font-medium">
                           +90 544 847 41 21
                         </a>
-                        <p className="text-sm text-muted-foreground mt-1">Hafta içi 08:00 - 18:00</p>
+                        <p className="text-sm text-muted-foreground mt-1">Hızlı yanıt için WhatsApp tercih edin</p>
                       </div>
                     </div>
                   </CardContent>
@@ -125,9 +182,7 @@ const Contact = () => {
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">Çalışma Saatleri</h3>
                         <p className="text-muted-foreground">
-                          Pazartesi - Cuma: 08:00 - 18:00
-                          <br />
-                          Cumartesi: 09:00 - 14:00
+                          Pazartesi – Cumartesi: 08:00 – 18:30
                           <br />
                           Pazar: Kapalı
                         </p>
@@ -141,9 +196,12 @@ const Contact = () => {
             {/* Contact Form */}
             <Card className="border-2">
               <CardContent className="p-8">
-                <h2 className="text-2xl font-bold text-foreground mb-6">
-                  Bize Mesaj Gönderin
+                <h2 className="text-2xl font-bold text-foreground mb-2">
+                  Mesaj Gönderin
                 </h2>
+                <p className="text-muted-foreground mb-6">
+                  Form yerine doğrudan aramayı veya WhatsApp yazmayı tercih edebilirsiniz.
+                </p>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -162,32 +220,32 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      E-posta *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="ornek@email.com"
-                      className="w-full"
-                    />
-                  </div>
-
-                  <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                      Telefon
+                      Telefon *
                     </label>
                     <Input
                       id="phone"
                       name="phone"
                       type="tel"
+                      required
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+90 XXX XXX XX XX"
+                      placeholder="05XX XXX XX XX"
+                      className="w-full"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      E-posta
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="ornek@email.com (isteğe bağlı)"
                       className="w-full"
                     />
                   </div>
@@ -203,7 +261,7 @@ const Contact = () => {
                       required
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder="Mesajınızın konusu"
+                      placeholder="Örn: Gübre fiyat bilgisi"
                       className="w-full"
                     />
                   </div>
@@ -219,7 +277,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Mesajınızı buraya yazın..."
-                      className="w-full min-h-[150px]"
+                      className="w-full min-h-[120px]"
                     />
                   </div>
 
