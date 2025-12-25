@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, Eye, Award, Users } from "lucide-react";
+import { Target, Eye, Award, Users, MapPin, Handshake } from "lucide-react";
 import aboutHero from "@/assets/crops-field-new.png";
 
 const About = () => {
@@ -20,7 +20,7 @@ const About = () => {
             Hakkımızda
           </h1>
           <p className="text-xl opacity-95 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Yiğiter Tarım Ürünleri olarak, modern tarım teknolojileri ve kaliteli hizmetlerle üreticilerin yanındayız.
+            Trakya'da üreticilerin güvendiği, sahada aktif bir tarım tedarikçisiyiz.
           </p>
         </div>
       </section>
@@ -30,34 +30,87 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-foreground mb-8 text-center">
-              Firmamız
+              Biz Kimiz?
             </h2>
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
               <p className="text-lg leading-relaxed">
-                Yiğiter Tarım Ürünleri, güçlü mühendis kadrosu, bilinçli yöneticileri ve 
-                deneyimli saha ekibi ile bölgesindeki tüm üreticilere hizmet götürmeyi 
-                amaçlayan bir zirai işletmedir.
+                Yiğiter Tarımsal Ürünleri, Tekirdağ merkezli bir tarım tedarik firmasıdır. 
+                25 yılı aşkın sektör deneyimimizle Trakya bölgesindeki çiftçilere ve 
+                üreticilere gübre, zirai ilaç, tohum ve yem tedarikinde güvenilir bir 
+                çözüm ortağı olmayı sürdürüyoruz.
               </p>
               <p className="text-lg leading-relaxed">
-                Gerek teknik destek, gerekse üreticilerimizin ihtiyacı olan zirai ilaç, 
-                gübre, damla sulama sistemleri gibi ürünlerin tedariğini düzenli olarak 
-                gerçekleştirip, üreticilerimizin kapılarına kadar teslim etme sürecini 
-                yönetmektedir.
+                İşimizi ofisten değil, tarladan yönetiyoruz. Bölgenin toprak yapısını, 
+                iklim koşullarını ve üreticilerin gerçek ihtiyaçlarını biliyor, 
+                ürün önerilerimizi buna göre yapıyoruz. Syngenta, Bayer, BASF, Pioneer 
+                gibi sektörün kanıtlanmış markalarıyla çalışıyor, ürünleri stoklu olarak 
+                bulundurup hızlı teslimat sağlıyoruz.
               </p>
               <p className="text-lg leading-relaxed">
-                Yiğiter Tarım, zirai ilaç, gübre, tohum, damla sulama sistemleri, tarım 
-                makinaları gibi üreticilerimizin ihtiyaç duyduğu tüm ürünleri her dönem 
-                stoklarında bulundurmaktadır. Müşteri memnuniyeti odaklı çalışma anlayışımız 
-                ve kaliteli hizmet sunma ilkemiz ile sektörde güvenilir bir marka olmayı 
-                hedefliyoruz.
+                Sadece ürün satmıyoruz; ekim öncesinden hasat sonrasına kadar 
+                teknik destek sunuyoruz. Tarla ziyaretleri yapıyor, toprak analizlerine 
+                eşlik ediyor, ilaçlama ve gübreleme konusunda danışmanlık veriyoruz. 
+                Bizim için önemli olan tek şey, üreticinin verimli bir sezon geçirmesidir.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Key Strengths */}
       <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
+            Farkımız
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <Card className="text-center hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="mb-4 p-3 bg-primary/10 rounded-full w-fit mx-auto">
+                  <MapPin className="h-10 w-10 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  Yerel Bilgi
+                </h3>
+                <p className="text-muted-foreground">
+                  Trakya'nın toprak ve iklim koşullarını biliyor, ürün önerilerimizi buna göre yapıyoruz.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="mb-4 p-3 bg-primary/10 rounded-full w-fit mx-auto">
+                  <Handshake className="h-10 w-10 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  Güvenilir Markalar
+                </h3>
+                <p className="text-muted-foreground">
+                  Sektörün kanıtlanmış markaları ile çalışıyor, kaliteden ödün vermiyoruz.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="mb-4 p-3 bg-primary/10 rounded-full w-fit mx-auto">
+                  <Users className="h-10 w-10 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  Saha Desteği
+                </h3>
+                <p className="text-muted-foreground">
+                  Tarla ziyaretleri ve teknik danışmanlıkla hasat sonuna kadar yanınızdayız.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <Card className="border-2 hover:border-primary transition-all duration-300 hover:shadow-lg">
@@ -69,9 +122,9 @@ const About = () => {
                   Misyonumuz
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Tarım sektöründe faaliyet gösteren üreticilere, en kaliteli ürünleri 
-                  en uygun fiyatlarla sunarak, modern tarım teknolojileri ve uzman kadromuzla 
-                  verimliliklerini artırmalarına katkı sağlamak.
+                  Trakya bölgesindeki üreticilere doğru ürünü, doğru zamanda, doğru 
+                  fiyatla ulaştırmak. Teknik bilgi ve saha desteğiyle üreticinin 
+                  verimini artırmak.
                 </p>
               </CardContent>
             </Card>
@@ -85,9 +138,8 @@ const About = () => {
                   Vizyonumuz
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Türkiye tarımının gelişimine katkı sağlayan, yenilikçi çözümler sunan, 
-                  güvenilir ve tercih edilen bir marka olmak. Sürdürülebilir tarım 
-                  uygulamaları ile geleceğe değer katmak.
+                  Trakya'nın en güvenilir tarım tedarikçisi olmak. Bölgedeki her 
+                  üreticinin ihtiyaç duyduğunda ilk arayacağı firma olmak.
                 </p>
               </CardContent>
             </Card>
@@ -96,7 +148,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
             Değerlerimiz
@@ -108,10 +160,10 @@ const About = () => {
                   <Award className="h-10 w-10 text-accent" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
-                  Kalite
+                  Dürüstlük
                 </h3>
                 <p className="text-muted-foreground">
-                  En yüksek kalite standartlarında ürün ve hizmet sunmak.
+                  Üreticiye ihtiyacı olmayan ürünü satmayız. Doğru bilgiyi, doğru zamanda veririz.
                 </p>
               </CardContent>
             </Card>
@@ -122,10 +174,10 @@ const About = () => {
                   <Users className="h-10 w-10 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
-                  Müşteri Odaklılık
+                  Ulaşılabilirlik
                 </h3>
                 <p className="text-muted-foreground">
-                  Üreticilerin ihtiyaçlarına özel çözümler geliştirmek.
+                  Telefonunuz her zaman açılır. Sezon yoğunluğunda bile size dönüş yaparız.
                 </p>
               </CardContent>
             </Card>
@@ -136,10 +188,10 @@ const About = () => {
                   <Target className="h-10 w-10 text-secondary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
-                  Güvenilirlik
+                  Sonuç Odaklılık
                 </h3>
                 <p className="text-muted-foreground">
-                  Sözümüzün ve hizmet kalitemizin güvencesi olmak.
+                  Amacımız ürün satmak değil, üreticinin verimli bir sezon geçirmesini sağlamak.
                 </p>
               </CardContent>
             </Card>

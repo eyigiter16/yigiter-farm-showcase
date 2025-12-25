@@ -1,46 +1,27 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, HeadphonesIcon } from "lucide-react";
+import { ArrowRight, MessageCircle, Users, Truck, HeadphonesIcon } from "lucide-react";
 import heroImage from "@/assets/tractor-spraying.png";
 import cropsImage from "@/assets/crops-field-new.png";
 import cattleImage from "@/assets/cattle-feeding-new.png";
-import handshakeIcon from "@/assets/icon-handshake-new.png";
 
 const Home = () => {
-  const features = [
+  const whyChooseUs = [
     {
-      icon: (
-        <svg viewBox="0 0 80 80" className="w-16 h-16">
-          <circle cx="40" cy="60" r="18" fill="hsl(var(--primary))" opacity="0.15"/>
-          <path d="M20 65 Q30 55 40 58 Q50 61 60 55 L60 72 L20 72 Z" fill="hsl(var(--primary))" opacity="0.3"/>
-          <g fill="hsl(var(--accent))">
-            <ellipse cx="30" cy="28" rx="3" ry="7" transform="rotate(-15 30 28)" />
-            <ellipse cx="27" cy="34" rx="2.5" ry="5.5" transform="rotate(-25 27 34)" />
-            <ellipse cx="33" cy="34" rx="2.5" ry="5.5" transform="rotate(5 33 34)" />
-            <rect x="29" y="32" width="2" height="20" rx="1" fill="hsl(var(--primary))"/>
-          </g>
-          <g fill="hsl(var(--accent))">
-            <ellipse cx="50" cy="28" rx="3" ry="7" transform="rotate(15 50 28)" />
-            <ellipse cx="53" cy="34" rx="2.5" ry="5.5" transform="rotate(25 53 34)" />
-            <ellipse cx="47" cy="34" rx="2.5" ry="5.5" transform="rotate(-5 47 34)" />
-            <rect x="49" y="32" width="2" height="20" rx="1" fill="hsl(var(--primary))"/>
-          </g>
-          <circle cx="40" cy="18" r="8" fill="hsl(var(--accent))" opacity="0.3"/>
-        </svg>
-      ),
-      title: "Geniş Ürün Yelpazesi",
-      description: "Tarım ve hayvancılık faaliyetleriniz için tohumdan gübreye, yemden ekipmana taze geniş bir ürün yelpazesi sunuyoruz.",
+      icon: <Users className="w-10 h-10 text-primary" />,
+      title: "25+ Yıllık Deneyim",
+      description: "Trakya bölgesinde çeyrek asırlık tarım tecrübesiyle üreticilere hizmet veriyoruz.",
     },
     {
-      iconImage: handshakeIcon,
-      title: "Güvenilir Tedarik",
-      description: "Zamanında teslimat, kaliteli ürünler ve sürdürülebilir tedarik anlayışıyla uzun vadeli bir iş ortağı olmayı hedefliyoruz.",
+      icon: <Truck className="w-10 h-10 text-primary" />,
+      title: "Hızlı ve Güvenilir Tedarik",
+      description: "Syngenta, Bayer, BASF gibi kanıtlanmış markalardan stoklu ürün tedariği sağlıyoruz.",
     },
     {
-      icon: <HeadphonesIcon className="w-12 h-12 text-primary" />,
+      icon: <HeadphonesIcon className="w-10 h-10 text-primary" />,
       title: "Satış Sonrası Destek",
-      description: "Satış sonrası süreçte teknik destek ve danışmanlık hizmetleriyle her zaman yanınızdayız.",
+      description: "Tarla ziyaretleri ve teknik danışmanlıkla hasat sonuna kadar yanınızdayız.",
     },
   ];
 
@@ -56,32 +37,50 @@ const Home = () => {
           }}
         />
         
-        {/* Gradient Overlay - Left side darker for text readability */}
+        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
 
         <div className="relative z-10 container mx-auto px-4 py-20">
           <div className="max-w-xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-up">
-              <span className="text-primary">Yiğiter</span>{" "}
-              <span className="text-foreground">Tarımsal</span>
+              <span className="text-foreground">Trakya'nın Güvenilir</span>
               <br />
-              <span className="text-foreground">Ürünleri'ne</span>{" "}
-              <span className="text-primary">Hoşgeldiniz</span>
+              <span className="text-primary">Tarım Tedarikçisi</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              Çiftçiler, bayiler ve üreticiler için <strong className="text-foreground">tarımsal ürünler, hayvan yemleri ve mama çözümleri</strong> sunuyoruz.
+            <p className="text-lg md:text-xl text-muted-foreground mb-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              Tekirdağ merkezli olarak <strong className="text-foreground">gübre, ilaç, tohum ve yem</strong> tedarikinde üreticilerin yanındayız.
             </p>
             
-            <div className="animate-fade-up" style={{ animationDelay: "0.4s" }}>
+            <p className="text-base text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+              Sektörün güvenilir markalarıyla çalışıyor, hızlı teslimat ve teknik destek sunuyoruz.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
               <Button
                 asChild
                 size="lg"
-                className="bg-primary hover:bg-primary-glow text-primary-foreground text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all group"
+                className="bg-[#25D366] hover:bg-[#20bd5a] text-white text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all group"
+              >
+                <a 
+                  href="https://wa.me/905448474121?text=Merhaba,%20ürünleriniz%20hakkında%20bilgi%20almak%20istiyorum." 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                  WhatsApp ile Ulaşın
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="text-lg px-8 py-6 rounded-full border-2"
               >
                 <Link to="/urunler" className="flex items-center gap-2">
-                  Ürünlerimizi Keşfedin
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  Ürünleri İncele
+                  <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
             </div>
@@ -103,40 +102,35 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Why Choose Us Section */}
       <section className="py-20 bg-background relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-foreground">Tarım ve Hayvancılıkta</span>{" "}
-              <span className="text-primary">Güvenilir Çözümler</span>
+              <span className="text-foreground">Neden</span>{" "}
+              <span className="text-primary">Yiğiter Tarım?</span>
             </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Trakya'da üreticilerin güvendiği, sahada aktif bir tarım tedarikçisiyiz.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {features.map((feature, index) => (
+            {whyChooseUs.map((item, index) => (
               <Card
                 key={index}
                 className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-card animate-fade-in group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-8 text-center">
-                  <div className="mb-6 mx-auto w-24 h-24 flex items-center justify-center">
-                    {feature.iconImage ? (
-                      <img 
-                        src={feature.iconImage} 
-                        alt={feature.title}
-                        className="w-20 h-20 object-contain"
-                      />
-                    ) : (
-                      feature.icon
-                    )}
+                  <div className="mb-6 mx-auto w-20 h-20 flex items-center justify-center bg-primary/10 rounded-full">
+                    {item.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-primary">
-                    {feature.title}
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">
+                    {item.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    {feature.description}
+                    {item.description}
                   </p>
                 </CardContent>
               </Card>
@@ -164,11 +158,11 @@ const Home = () => {
         <div className="container mx-auto px-4 pt-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-foreground">Tarım ve Hayvancılıkta</span>{" "}
-              <span className="text-primary">Güvenilir Çözümler</span>
+              <span className="text-foreground">Sunduğumuz</span>{" "}
+              <span className="text-primary">Ürün Grupları</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Yiğiter Tarımsal Ürünleri olarak tarım ve hayvancılık sektörünün ihtiyaçlarına yönelik kaliteli ürünler sunuyor, üretimin her aşamasında müşterilerimize destek oluyoruz.
+              Tarla bitkilerinden hayvancılığa kadar geniş ürün yelpazemizle üretim sürecinizin her aşamasında yanınızdayız.
             </p>
           </div>
 
@@ -181,10 +175,10 @@ const Home = () => {
                   alt="Tarımsal Ürünler"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 text-background">
-                  <h3 className="text-2xl font-bold">Tarımsal Ürünler</h3>
-                  <p className="opacity-90">Tohum, gübre ve ilaç çözümleri</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-background">
+                  <h3 className="text-2xl font-bold mb-2">Tarımsal Ürünler</h3>
+                  <p className="opacity-90">Gübre, zirai ilaç ve sertifikalı tohumlar</p>
                 </div>
               </div>
             </div>
@@ -197,13 +191,26 @@ const Home = () => {
                   alt="Hayvancılık Ürünleri"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 text-background">
-                  <h3 className="text-2xl font-bold">Hayvancılık Ürünleri</h3>
-                  <p className="opacity-90">Kaliteli yem ve bakım ürünleri</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-background">
+                  <h3 className="text-2xl font-bold mb-2">Hayvancılık & Mama</h3>
+                  <p className="opacity-90">Büyükbaş, küçükbaş yemleri ve evcil hayvan mamaları</p>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="text-center mt-10">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary-glow text-primary-foreground px-8 py-6 rounded-full"
+            >
+              <Link to="/urunler" className="flex items-center gap-2">
+                Tüm Ürünleri Görüntüle
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -212,18 +219,37 @@ const Home = () => {
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Tarımda Başarıya Birlikte Ulaşalım
+            Ürün ve Fiyat Bilgisi İçin Hemen Arayın
           </h2>
           <p className="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
-            Ürünlerimiz ve hizmetlerimiz hakkında daha fazla bilgi almak için bizimle iletişime geçin.
+            Stok durumu, fiyat ve teslimat hakkında bilgi almak için bize ulaşın. Trakya genelinde hızlı teslimat yapıyoruz.
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full"
-          >
-            <Link to="/iletisim">İletişime Geçin</Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#25D366] hover:bg-[#20bd5a] text-white text-lg px-8 py-6 rounded-full"
+            >
+              <a 
+                href="https://wa.me/905448474121" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <MessageCircle className="h-5 w-5" />
+                WhatsApp
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full"
+            >
+              <a href="tel:+905448474121">
+                0544 847 41 21
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
     </div>

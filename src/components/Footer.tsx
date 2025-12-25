@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
 import logoImage from "@/assets/logo-yigiter.png";
 
 const Footer = () => {
@@ -16,8 +16,9 @@ const Footer = () => {
                 className="h-20 w-auto object-contain drop-shadow-sm"
               />
             </div>
-            <p className="text-sm opacity-80 leading-relaxed">
-              Yiğiter Tarımsal Ürünleri – Tarım ve hayvancılıkta güvenilir çözüm ortağınız.
+            <p className="text-sm opacity-90 leading-relaxed">
+              Tekirdağ merkezli tarım tedarikçisi. Gübre, ilaç, tohum ve yem tedariğinde 
+              Trakya çiftçisinin güvenilir çözüm ortağı.
             </p>
           </div>
 
@@ -46,14 +47,14 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Hizmetlerimiz</h4>
+            <h4 className="text-lg font-semibold mb-4">Ürün Grupları</h4>
             <ul className="space-y-2">
               {[
-                "Zirai İlaç",
                 "Gübre",
+                "Zirai İlaç",
                 "Tohum",
                 "Hayvan Yemleri",
-                "Kedi & Köpek Mamaları",
+                "Evcil Hayvan Mamaları",
               ].map((service) => (
                 <li key={service}>
                   <span className="text-sm opacity-80">{service}</span>
@@ -85,6 +86,12 @@ const Footer = () => {
                   59030 Süleymanpaşa / Tekirdağ
                 </span>
               </li>
+              <li className="flex items-start gap-2">
+                <Clock className="h-4 w-4 mt-1 flex-shrink-0" />
+                <span className="text-sm opacity-80">
+                  Pzt – Cmt: 08:00 – 18:30
+                </span>
+              </li>
             </ul>
             <div className="flex gap-3 mt-4">
               <a
@@ -114,7 +121,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center">
           <p className="text-sm opacity-80">
-            © {new Date().getFullYear()} Yiğiter Tarım Ürünleri. Tüm hakları saklıdır.
+            © {new Date().getFullYear()} Yiğiter Tarım Ürünleri. Tüm hakları saklıdır. | Tekirdağ, Türkiye
           </p>
         </div>
       </div>
