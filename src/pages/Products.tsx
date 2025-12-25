@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sprout, Leaf, Bug, Wheat, Dog, Cat, Bird } from "lucide-react";
+import tractorImage from "@/assets/tractor-fertilizer.png";
 
 const Products = () => {
   const productGroups = [
@@ -86,8 +87,16 @@ const Products = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 pt-32 bg-gradient-to-b from-primary/10 to-background">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative py-20 pt-32 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${tractorImage})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-primary">Ürünlerimiz</span>
           </h1>
