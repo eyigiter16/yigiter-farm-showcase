@@ -121,7 +121,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center">
           <p className="text-sm opacity-80">
-            © {new Date().getFullYear()} Yiğiter Tarım Ürünleri. Tüm hakları saklıdır. | Tekirdağ, Türkiye
+            © {new Date().getFullYear()} Yiğiter Tarımsal Ürünleri. Tüm hakları saklıdır. | Tekirdağ, Türkiye
           </p>
         </div>
       </div>
