@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Sprout, Leaf, Bug, Wheat, Dog, Cat, Bird, MessageCircle } from "lucide-react";
+import { Sprout, Leaf, Bug, Wheat, Dog, Cat, Bird, MessageCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import tractorImage from "@/assets/tractor-fertilizer.png";
 
@@ -8,6 +8,7 @@ const Products = () => {
   const productGroups = [
     {
       title: "Gübre",
+      slug: "gubre",
       icon: <Leaf className="h-8 w-8 text-primary" />,
       intro: "Toprağınız yorgun mu, verim düşük mü? Doğru gübreleme ile farkı görün.",
       items: [
@@ -27,6 +28,7 @@ const Products = () => {
     },
     {
       title: "Zirai İlaç (Bitki Koruma)",
+      slug: "zirai-ilac",
       icon: <Bug className="h-8 w-8 text-primary" />,
       intro: "Hastalık ve zararlılar ürününüzü tehdit ediyor mu? Ruhsatlı ilaçlarla korunun.",
       items: [
@@ -52,6 +54,7 @@ const Products = () => {
     },
     {
       title: "Tohum",
+      slug: "tohum",
       icon: <Wheat className="h-8 w-8 text-primary" />,
       intro: "Her şey doğru tohumla başlar. Bölgeye uygun, sertifikalı çeşitler sunuyoruz.",
       items: [
@@ -77,6 +80,7 @@ const Products = () => {
     },
     {
       title: "Hayvan Yemleri",
+      slug: "hayvan-yemleri",
       icon: <Bird className="h-8 w-8 text-primary" />,
       intro: "Sağlıklı hayvan, verimli üretim. Kaliteli yemle farkı yaratın.",
       items: [
@@ -96,6 +100,7 @@ const Products = () => {
     },
     {
       title: "Evcil Hayvan Mamaları",
+      slug: "evcil-hayvan-mamalari",
       icon: <Dog className="h-8 w-8 text-primary" />,
       intro: "Kediniz veya köpeğiniz için güvenilir ve besleyici mama çeşitleri.",
       items: [
@@ -117,6 +122,7 @@ const Products = () => {
     },
     {
       title: "Teknik Danışmanlık",
+      slug: null, // No category page for this
       icon: <Sprout className="h-8 w-8 text-primary" />,
       intro: "Ürün satışının ötesinde, tarlada yanınızdayız.",
       items: [
@@ -159,11 +165,22 @@ const Products = () => {
           <div className="space-y-16">
             {productGroups.map((group, groupIndex) => (
               <div key={groupIndex} className="animate-fade-in" style={{ animationDelay: `${groupIndex * 0.1}s` }}>
-                <div className="flex items-center gap-3 mb-4">
-                  {group.icon}
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                    {group.title}
-                  </h2>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    {group.icon}
+                    <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                      {group.title}
+                    </h2>
+                  </div>
+                  {group.slug && (
+                    <Link
+                      to={`/urunler/${group.slug}`}
+                      className="hidden sm:flex items-center gap-2 text-primary hover:text-primary-glow font-medium transition-colors"
+                    >
+                      Tüm Ürünleri Gör
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
                 </div>
                 <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
                   {group.intro}
@@ -200,6 +217,16 @@ const Products = () => {
                     </Card>
                   ))}
                 </div>
+                {group.slug && (
+                  <div className="mt-6 sm:hidden">
+                    <Button asChild variant="outline" className="w-full">
+                      <Link to={`/urunler/${group.slug}`} className="flex items-center gap-2">
+                        Tüm {group.title} Ürünlerini Gör
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                )}
               </div>
             ))}
           </div>
