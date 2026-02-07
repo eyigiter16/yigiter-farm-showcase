@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sprout, Leaf, Bug, Wheat, Dog, Cat, Bird, MessageCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import tractorImage from "@/assets/tractor-fertilizer.png";
+import { categories } from "@/data/products";
 
 const Products = () => {
   const productGroups = [
@@ -14,12 +15,14 @@ const Products = () => {
       items: [
         {
           name: "Taban ve Üst Gübreler",
+          subcategorySlug: "taban-gubre",
           problem: "Toprağın besin değeri zamanla azalır, bitkiler yeterli besini alamaz.",
           solution: "Mineral ve organomineral gübrelerimizle toprağı besliyor, verimi artırıyoruz.",
           benefit: "Daha güçlü bitkiler, daha yüksek hasat.",
         },
         {
           name: "Yaprak Gübreleri",
+          subcategorySlug: "yaprak-gubre",
           problem: "Kök yoluyla alınamayan besinler bitki gelişimini yavaşlatır.",
           solution: "Yapraktan uygulanan özel formüllerle hızlı besin takviyesi sağlıyoruz.",
           benefit: "Hızlı etki, görünür sonuçlar.",
@@ -34,18 +37,21 @@ const Products = () => {
       items: [
         {
           name: "Fungusit (Mantar İlaçları)",
+          subcategorySlug: "fungusit",
           problem: "Küf, pas ve mantar hastalıkları ürün kaybına yol açar.",
           solution: "Syngenta, Bayer, BASF gibi güvenilir markaların ruhsatlı ürünlerini sunuyoruz.",
           benefit: "Sağlıklı bitki, kayıpsız hasat.",
         },
         {
           name: "İnsektisit (Böcek İlaçları)",
+          subcategorySlug: "insektisit",
           problem: "Zararlı böcekler bitkiye ve meyveye zarar verir.",
           solution: "Etkili ve hedef odaklı insektisitlerle zararlıları kontrol altına alıyoruz.",
           benefit: "Temiz ürün, pazarda değer.",
         },
         {
           name: "Herbisit (Yabancı Ot İlaçları)",
+          subcategorySlug: "herbisit",
           problem: "Yabancı otlar su ve besini çalarak verimi düşürür.",
           solution: "Seçici ve geniş spektrumlu herbisitlerle ot kontrolü sağlıyoruz.",
           benefit: "Daha az rekabet, daha çok verim.",
@@ -60,18 +66,21 @@ const Products = () => {
       items: [
         {
           name: "Tarla Bitkileri Tohumları",
+          subcategorySlug: "tarla-bitkileri",
           problem: "Uygun olmayan tohum seçimi düşük verim ve hastalık riski demektir.",
           solution: "Pioneer, Dekalb, LG gibi markalardan bölgeye uygun hibrit tohumlar sağlıyoruz.",
           benefit: "Yüksek çimlenme, güçlü bitki, dolu başak.",
         },
         {
           name: "Sebze Tohumları",
+          subcategorySlug: "sebze",
           problem: "Düşük kaliteli tohum pazarda değersiz ürün demektir.",
           solution: "Seminis, Syngenta, Sakata gibi markalardan kaliteli sebze tohumları sunuyoruz.",
           benefit: "Homojen ürün, pazarda rekabet avantajı.",
         },
         {
           name: "Bahçe ve Sera Tohumları",
+          subcategorySlug: "sera",
           problem: "Sera üretiminde performans farkı doğrudan kâra yansır.",
           solution: "Yüksek performanslı sera çeşitleriyle üretim verimliliğini artırıyoruz.",
           benefit: "Erken hasat, uzun raf ömrü.",
@@ -86,12 +95,14 @@ const Products = () => {
       items: [
         {
           name: "Büyükbaş ve Küçükbaş Yemleri",
+          subcategorySlug: "buyukbas",
           problem: "Yetersiz beslenme süt verimini ve et kalitesini düşürür.",
           solution: "Dengeli besin içerikli, güvenilir yem ürünleri tedarik ediyoruz.",
           benefit: "Daha verimli sürü, daha kârlı hayvancılık.",
         },
         {
           name: "Kanatlı Yemleri",
+          subcategorySlug: "kanatli",
           problem: "Düşük kaliteli yem yumurta verimini ve civciv sağlığını etkiler.",
           solution: "Tavuk ve güvercin için özel formüllü yemler sunuyoruz.",
           benefit: "Sağlıklı kanatlılar, düzenli verim.",
@@ -106,6 +117,7 @@ const Products = () => {
       items: [
         {
           name: "Kedi Mamaları",
+          subcategorySlug: "kedi",
           problem: "Kalitesiz mama sindirim sorunları ve tüy dökülmesine yol açar.",
           solution: "Lider Pet Food markasından dengeli ve besleyici mamalar sunuyoruz.",
           benefit: "Sağlıklı, enerjik ve mutlu dostlar.",
@@ -113,6 +125,7 @@ const Products = () => {
         },
         {
           name: "Köpek Mamaları",
+          subcategorySlug: "kopek",
           problem: "Yetersiz beslenme köpeğin gelişimini ve bağışıklığını zayıflatır.",
           solution: "Her yaş ve ırk için uygun mama seçenekleri sağlıyoruz.",
           benefit: "Güçlü kemikler, parlak tüyler, uzun ömür.",
@@ -186,36 +199,52 @@ const Products = () => {
                   {group.intro}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {group.items.map((item, itemIndex) => (
-                    <Card
-                      key={itemIndex}
-                      className="border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300 bg-card"
-                    >
-                      <CardHeader className="pb-2">
-                        <CardTitle className="text-lg font-semibold text-primary flex items-center gap-2">
-                          {item.icon && item.icon}
-                          {item.name}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="space-y-3">
-                        <div>
-                          <p className="text-sm text-muted-foreground">
-                            <span className="font-medium text-foreground">Sorun:</span> {item.problem}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-muted-foreground">
-                            <span className="font-medium text-foreground">Çözüm:</span> {item.solution}
-                          </p>
-                        </div>
-                        <div className="pt-2 border-t border-border/50">
-                          <p className="text-sm font-medium text-primary">
-                            ✓ {item.benefit}
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
+                  {group.items.map((item, itemIndex) => {
+                    const cardContent = (
+                      <Card
+                        className="border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300 bg-card h-full"
+                      >
+                        <CardHeader className="pb-2">
+                          <CardTitle className="text-lg font-semibold text-primary flex items-center gap-2">
+                            {item.icon && item.icon}
+                            {item.name}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                          <div>
+                            <p className="text-sm text-muted-foreground">
+                              <span className="font-medium text-foreground">Sorun:</span> {item.problem}
+                            </p>
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">
+                              <span className="font-medium text-foreground">Çözüm:</span> {item.solution}
+                            </p>
+                          </div>
+                          <div className="pt-2 border-t border-border/50">
+                            <p className="text-sm font-medium text-primary">
+                              ✓ {item.benefit}
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    );
+
+                    // If item has subcategory, make it clickable
+                    if (group.slug && item.subcategorySlug) {
+                      return (
+                        <Link
+                          key={itemIndex}
+                          to={`/urunler/${group.slug}?sub=${item.subcategorySlug}`}
+                          className="block"
+                        >
+                          {cardContent}
+                        </Link>
+                      );
+                    }
+
+                    return <div key={itemIndex}>{cardContent}</div>;
+                  })}
                 </div>
                 {group.slug && (
                   <div className="mt-6 sm:hidden">
