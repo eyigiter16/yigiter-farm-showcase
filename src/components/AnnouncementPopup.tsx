@@ -54,6 +54,13 @@ const AnnouncementPopup = () => {
           <DialogDescription className="text-base leading-relaxed">
             {announcement.message}
           </DialogDescription>
+          {announcement.image && (
+            <img
+              src={announcement.image}
+              alt={announcement.title}
+              className="w-full rounded-lg mt-3 object-cover max-h-56"
+            />
+          )}
         </DialogHeader>
         <div className="flex gap-3 mt-4">
           {announcement.ctaText && announcement.ctaLink && (

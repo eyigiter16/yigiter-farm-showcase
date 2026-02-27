@@ -3,10 +3,11 @@
 // Users who dismiss it won't see it again until you change the id.
 
 export interface Announcement {
-  id: string; // Change this to force re-display after dismissal
+  id: string;
   enabled: boolean;
   title: string;
   message: string;
+  image?: string; // Optional image URL or imported asset
   type: "info" | "warning" | "success" | "promo";
   ctaText?: string;
   ctaLink?: string;
