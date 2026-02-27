@@ -56,6 +56,27 @@ const Products = () => {
           solution: "Seçici ve geniş spektrumlu herbisitlerle ot kontrolü sağlıyoruz.",
           benefit: "Daha az rekabet, daha çok verim.",
         },
+        {
+          name: "Akarisit (Kırmızı Örümcek)",
+          subcategorySlug: "akarisit",
+          problem: "Kırmızı örümcek yaprakları kurutur, verimi ciddi düşürür.",
+          solution: "Hedefe yönelik akarisitlerle zararlıyı kontrol altına alıyoruz.",
+          benefit: "Yaprak sağlığı korunur, verim artar.",
+        },
+        {
+          name: "Nematisit (Toprak Zararlısı)",
+          subcategorySlug: "nematisit",
+          problem: "Nematodlar kök sistemine zarar vererek bitkiyi zayıflatır.",
+          solution: "Toprak fumigasyonu ve biyolojik çözümlerle nematod kontrolü.",
+          benefit: "Güçlü kökler, sağlıklı gelişim.",
+        },
+        {
+          name: "Rodentisit (Kemirgen)",
+          subcategorySlug: "rodentisit",
+          problem: "Fareler depo ve tarla ürünlerine ciddi zarar verir.",
+          solution: "Etkili ve güvenli rodentisit ürünleriyle kemirgen kontrolü.",
+          benefit: "Depo ve tarla güvenliği.",
+        },
       ],
     },
     {
