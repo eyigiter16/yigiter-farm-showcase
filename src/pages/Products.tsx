@@ -198,7 +198,15 @@ const Products = () => {
                 <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
                   {group.intro}
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className={`grid gap-6 ${
+                  group.items.length === 1
+                    ? "grid-cols-1 max-w-lg"
+                    : group.items.length === 2
+                    ? "grid-cols-1 md:grid-cols-2"
+                    : group.items.length <= 4
+                    ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                    : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                }`}>
                   {group.items.map((item, itemIndex) => {
                     const cardContent = (
                       <Card
