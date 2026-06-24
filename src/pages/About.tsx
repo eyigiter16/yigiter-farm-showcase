@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, Eye, Award, Users, MapPin, Handshake } from "lucide-react";
+import { Target, Eye, Award, Users, MapPin, Handshake, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import aboutHero from "@/assets/crops-field-new.png";
 
 const About = () => {
@@ -12,14 +13,16 @@ const About = () => {
           style={{
             backgroundImage: `url(${aboutHero})`,
           }}
+          role="img"
+          aria-label="Tarla manzarası"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/85" />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-up">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-up">
             Hakkımızda
           </h1>
-          <p className="text-xl opacity-95 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <p className="text-xl md:text-2xl font-medium opacity-100 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
             Trakya'da üreticilerin güvendiği, sahada aktif bir tarım tedarikçisiyiz.
           </p>
         </div>
@@ -32,26 +35,41 @@ const About = () => {
             <h2 className="text-4xl font-bold text-foreground mb-8 text-center">
               Biz Kimiz?
             </h2>
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
-              <p className="text-lg leading-relaxed">
+            <div className="prose prose-lg max-w-none text-foreground/90 space-y-6">
+              <p className="text-xl leading-relaxed font-medium">
                 Yiğiter Tarımsal Ürünleri, Tekirdağ merkezli bir tarım tedarik firmasıdır. 
                 25 yılı aşkın sektör deneyimimizle Trakya bölgesindeki çiftçilere ve 
                 üreticilere gübre, zirai ilaç, tohum ve yem tedarikinde güvenilir bir 
                 çözüm ortağı olmayı sürdürüyoruz.
               </p>
-              <p className="text-lg leading-relaxed">
+              <p className="text-xl leading-relaxed font-medium">
                 İşimizi ofisten değil, tarladan yönetiyoruz. Bölgenin toprak yapısını, 
                 iklim koşullarını ve üreticilerin gerçek ihtiyaçlarını biliyor, 
                 ürün önerilerimizi buna göre yapıyoruz. Syngenta, Bayer, BASF, Pioneer 
                 gibi sektörün kanıtlanmış markalarıyla çalışıyor, ürünleri stoklu olarak 
                 bulundurup hızlı teslimat sağlıyoruz.
               </p>
-              <p className="text-lg leading-relaxed">
+              <p className="text-xl leading-relaxed font-medium">
                 Sadece ürün satmıyoruz; ekim öncesinden hasat sonrasına kadar 
                 teknik destek sunuyoruz. Tarla ziyaretleri yapıyor, toprak analizlerine 
                 eşlik ediyor, ilaçlama ve gübreleme konusunda danışmanlık veriyoruz. 
                 Bizim için önemli olan tek şey, üreticinin verimli bir sezon geçirmesidir.
               </p>
+            </div>
+
+            {/* Team Link Reference */}
+            <div className="mt-12 p-8 bg-primary/5 rounded-3xl border-2 border-primary/10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">Başarımızın Arkasındaki Güç</h3>
+                <p className="text-lg text-foreground/80 font-medium">Deneyimli kadromuz ve uzman ekibimizle tanışın.</p>
+              </div>
+              <Link 
+                to="/ekibimiz" 
+                className="flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg hover:bg-primary-glow transition-all shadow-lg hover:shadow-xl group"
+              >
+                Ekibimizle Tanışın
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </div>
         </div>

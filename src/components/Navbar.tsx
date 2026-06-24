@@ -21,10 +21,10 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-28">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <Link to="/" className="group hover:opacity-90 transition-opacity">
-            <Logo size="md" />
+            <Logo size="sm" />
           </Link>
 
           {/* Desktop Navigation - Centered */}
@@ -33,10 +33,10 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`relative py-2 text-sm font-medium transition-all duration-200 ${
+                className={`relative py-2 text-sm font-semibold transition-all duration-200 ${
                   isActive(link.to)
                     ? "text-primary"
-                    : "text-foreground/80 hover:text-primary"
+                    : "text-foreground/90 hover:text-primary"
                 }`}
               >
                 {link.label}
@@ -51,7 +51,7 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <Button 
               asChild 
-              className="bg-primary hover:bg-primary-glow rounded-md px-6"
+              className="bg-primary hover:bg-primary-glow rounded-md px-6 font-semibold"
             >
               <Link to="/iletisim">Bize Ulaşın</Link>
             </Button>
@@ -61,7 +61,7 @@ const Navbar = () => {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden p-2 text-foreground hover:bg-primary/10 rounded-md transition-colors"
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Menüyü Kapat" : "Menüyü Aç"}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -69,17 +69,17 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 animate-fade-in">
+          <div className="lg:hidden py-4 animate-fade-in border-t border-border mt-2">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`px-4 py-3 rounded-md text-sm font-medium transition-all ${
+                  className={`px-4 py-4 rounded-xl text-lg font-semibold transition-all ${
                     isActive(link.to)
-                      ? "text-primary bg-primary/10"
-                      : "text-foreground/80 hover:text-primary hover:bg-primary/5"
+                      ? "text-primary bg-primary/10 border border-primary/20 shadow-sm"
+                      : "text-foreground/90 border border-transparent hover:bg-primary/5"
                   }`}
                 >
                   {link.label}
@@ -88,7 +88,8 @@ const Navbar = () => {
               <Button 
                 asChild 
                 variant="default" 
-                className="mt-2 bg-primary hover:bg-primary-glow"
+                size="lg"
+                className="mt-4 bg-primary hover:bg-primary-glow text-lg py-8 rounded-xl"
               >
                 <Link to="/iletisim" onClick={() => setIsMenuOpen(false)}>
                   Bize Ulaşın

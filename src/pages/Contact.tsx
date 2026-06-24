@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,37 +37,43 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-20">
+      <Helmet>
+        <title>İletişim | Yiğiter Tarım Ürünleri</title>
+        <meta name="description" content="Yiğiter Tarım Tekirdağ iletişim bilgileri. Bize telefon, WhatsApp veya e-posta yoluyla ulaşabilirsiniz." />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary via-primary-glow to-secondary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-up">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-up">
             Bize Ulaşın
           </h1>
-          <p className="text-xl opacity-95 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <p className="text-xl md:text-2xl font-medium opacity-100 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
             Ürün seçimi, fiyat bilgisi veya teknik destek için bize ulaşın. Hızlı dönüş garantisi veriyoruz.
           </p>
         </div>
       </section>
 
       {/* Quick Contact Banner */}
-      <section className="py-8 bg-[#25D366]">
+      <section className="py-10 bg-[#25D366] shadow-lg relative z-10">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-white">
-            <p className="text-lg font-medium">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-white text-center">
+            <p className="text-2xl font-bold">
               Acil mi? WhatsApp ile anında yanıt alın:
             </p>
             <Button
               asChild
               size="lg"
-              className="bg-white text-[#25D366] hover:bg-white/90 rounded-full"
+              className="bg-white text-[#25D366] hover:bg-white/90 rounded-full px-10 py-8 text-2xl font-bold shadow-xl transition-all hover:scale-105"
+              aria-label="WhatsApp"
             >
               <a 
                 href="https://wa.me/905448474121?text=Merhaba,%20ürünleriniz%20hakkında%20bilgi%20almak%20istiyorum." 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-2"
+                className="flex items-center gap-3"
               >
-                <MessageCircle className="h-5 w-5" />
+                <MessageCircle className="h-7 w-7" />
                 0544 847 41 21
               </a>
             </Button>
@@ -74,80 +81,49 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* When to Contact */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-foreground mb-6">
-              Hangi Konularda Yardımcı Olabiliriz?
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-6 bg-background rounded-xl border border-border">
-                <h3 className="font-semibold text-foreground mb-2">Ürün Seçimi</h3>
-                <p className="text-sm text-muted-foreground">
-                  Tarlanıza uygun gübre, ilaç veya tohum önerisi almak için bizi arayın.
-                </p>
-              </div>
-              <div className="p-6 bg-background rounded-xl border border-border">
-                <h3 className="font-semibold text-foreground mb-2">Fiyat ve Stok</h3>
-                <p className="text-sm text-muted-foreground">
-                  Güncel fiyatlar ve stok durumu hakkında bilgi almak için WhatsApp yazın.
-                </p>
-              </div>
-              <div className="p-6 bg-background rounded-xl border border-border">
-                <h3 className="font-semibold text-foreground mb-2">Teknik Destek</h3>
-                <p className="text-sm text-muted-foreground">
-                  Uygulama zamanı, dozaj ve teknik sorularınız için destek alın.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Info & Form */}
-      <section className="py-20 bg-background">
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
             {/* Contact Information */}
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-6">
+                <h2 className="text-4xl font-bold text-foreground mb-6">
                   İletişim Bilgileri
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                <p className="text-xl text-foreground/80 leading-relaxed mb-8 font-medium">
                   Tekirdağ merkezimizden Trakya genelinde hizmet veriyoruz. 
                   Telefon veya WhatsApp ile bize ulaşabilir, mağazamızı ziyaret edebilirsiniz.
                 </p>
               </div>
 
-              <div className="space-y-6">
-                <Card className="border-2 hover:border-primary transition-colors">
+              <div className="grid gap-6">
+                <Card className="border-2 border-border/50 hover:border-primary transition-all shadow-md group">
                   <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        <Phone className="h-6 w-6 text-primary" />
+                    <div className="flex items-start gap-5">
+                      <div className="p-4 bg-primary/10 rounded-2xl group-hover:bg-primary group-hover:text-white transition-colors">
+                        <Phone className="h-7 w-7" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">Telefon / WhatsApp</h3>
-                        <a href="tel:+905448474121" className="text-lg text-primary hover:underline font-medium">
+                        <h3 className="font-bold text-xl text-foreground mb-1">Telefon / WhatsApp</h3>
+                        <a href="tel:+905448474121" className="text-2xl text-primary hover:underline font-bold">
                           +90 544 847 41 21
                         </a>
-                        <p className="text-sm text-muted-foreground mt-1">Hızlı yanıt için WhatsApp tercih edin</p>
+                        <p className="text-base text-foreground/70 mt-2 font-medium">Hızlı yanıt için WhatsApp tercih edin</p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card className="border-2 hover:border-primary transition-colors">
+                <Card className="border-2 border-border/50 hover:border-primary transition-all shadow-md group">
                   <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        <Mail className="h-6 w-6 text-primary" />
+                    <div className="flex items-start gap-5">
+                      <div className="p-4 bg-primary/10 rounded-2xl group-hover:bg-primary group-hover:text-white transition-colors">
+                        <Mail className="h-7 w-7" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">E-posta</h3>
-                        <a href="mailto:yigitertarimsal@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                        <h3 className="font-bold text-xl text-foreground mb-1">E-posta</h3>
+                        <a href="mailto:yigitertarimsal@gmail.com" className="text-xl text-foreground/80 hover:text-primary transition-colors font-bold">
                           yigitertarimsal@gmail.com
                         </a>
                       </div>
@@ -155,36 +131,36 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-2 hover:border-primary transition-colors">
+                <Card className="border-2 border-border/50 hover:border-primary transition-all shadow-md group">
                   <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        <MapPin className="h-6 w-6 text-primary" />
+                    <div className="flex items-start gap-5">
+                      <div className="p-4 bg-primary/10 rounded-2xl group-hover:bg-primary group-hover:text-white transition-colors">
+                        <MapPin className="h-7 w-7" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">Adres</h3>
-                        <p className="text-muted-foreground">
+                        <h3 className="font-bold text-xl text-foreground mb-1">Adres</h3>
+                        <p className="text-xl text-foreground/80 font-bold leading-tight">
                           Çınarlı Mah. Hayrabolu Cd. No:9/10
                           <br />
-                          59030 Süleymanpaşa / Tekirdağ
+                          <span className="text-lg font-medium">59030 Süleymanpaşa / Tekirdağ</span>
                         </p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card className="border-2 hover:border-primary transition-colors">
+                <Card className="border-2 border-border/50 hover:border-primary transition-all shadow-md group">
                   <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        <Clock className="h-6 w-6 text-primary" />
+                    <div className="flex items-start gap-5">
+                      <div className="p-4 bg-primary/10 rounded-2xl group-hover:bg-primary group-hover:text-white transition-colors">
+                        <Clock className="h-7 w-7" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">Çalışma Saatleri</h3>
-                        <p className="text-muted-foreground">
+                        <h3 className="font-bold text-xl text-foreground mb-1">Çalışma Saatleri</h3>
+                        <p className="text-xl text-foreground/80 font-bold">
                           Pazartesi – Cumartesi: 08:00 – 18:30
                           <br />
-                          Pazar: Kapalı
+                          <span className="text-lg font-medium text-destructive">Pazar: Kapalı</span>
                         </p>
                       </div>
                     </div>
@@ -194,49 +170,52 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <Card className="border-2">
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-bold text-foreground mb-2">
+            <Card className="border-2 border-border/50 shadow-2xl overflow-hidden">
+              <div className="bg-primary/5 p-8 border-b border-border/50">
+                <h2 className="text-3xl font-bold text-foreground mb-2">
                   Mesaj Gönderin
                 </h2>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-foreground/70 font-medium">
                   Form yerine doğrudan aramayı veya WhatsApp yazmayı tercih edebilirsiniz.
                 </p>
+              </div>
+              <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Ad Soyad *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Adınız ve soyadınız"
-                      className="w-full"
-                    />
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-bold text-foreground mb-2 uppercase tracking-wider">
+                        Ad Soyad *
+                      </label>
+                      <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Adınız ve soyadınız"
+                        className="w-full py-6 border-2 focus:border-primary"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-bold text-foreground mb-2 uppercase tracking-wider">
+                        Telefon *
+                      </label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="05XX XXX XX XX"
+                        className="w-full py-6 border-2 focus:border-primary"
+                      />
+                    </div>
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                      Telefon *
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="05XX XXX XX XX"
-                      className="w-full"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="email" className="block text-sm font-bold text-foreground mb-2 uppercase tracking-wider">
                       E-posta
                     </label>
                     <Input
@@ -246,12 +225,12 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="ornek@email.com (isteğe bağlı)"
-                      className="w-full"
+                      className="w-full py-6 border-2 focus:border-primary"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="subject" className="block text-sm font-bold text-foreground mb-2 uppercase tracking-wider">
                       Konu *
                     </label>
                     <Input
@@ -262,12 +241,12 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="Örn: Gübre fiyat bilgisi"
-                      className="w-full"
+                      className="w-full py-6 border-2 focus:border-primary"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="message" className="block text-sm font-bold text-foreground mb-2 uppercase tracking-wider">
                       Mesaj *
                     </label>
                     <Textarea
@@ -277,14 +256,15 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Mesajınızı buraya yazın..."
-                      className="w-full min-h-[120px]"
+                      className="w-full min-h-[150px] border-2 focus:border-primary py-4"
                     />
                   </div>
 
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-primary hover:bg-primary-glow text-lg"
+                    className="w-full bg-primary hover:bg-primary-glow text-xl font-bold py-8 rounded-xl shadow-xl transition-all"
+                    aria-label="Mesajı Gönder"
                   >
                     Gönder
                   </Button>

@@ -92,6 +92,19 @@ export default {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        "whatsapp-hop": {
+          "0%, 4%, 8%, 12%, 16%, 20%": {
+            transform: "translateY(0)",
+            "animation-timing-function": "cubic-bezier(0, 0, 0.2, 1)",
+          },
+          "2%, 6%, 10%, 14%, 18%": {
+            transform: "translateY(-20%)",
+            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "21%, 100%": {
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -101,6 +114,7 @@ export default {
         "scale-in": "scale-in 0.3s ease-out",
         "slide-in-right": "slide-in-right 0.3s ease-out",
         float: "float 3s ease-in-out infinite",
+        "whatsapp-hop": "whatsapp-hop 15s ease-in-out infinite",
       },
     },
   },

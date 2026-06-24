@@ -27,11 +27,12 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Hızlı Bağlantılar</h4>
             <ul className="space-y-2">
               {[
-                { to: "/", label: "Ana Sayfa" },
-                { to: "/hakkimizda", label: "Hakkımızda" },
+                { to: "/", label: "Anasayfa" },
                 { to: "/urunler", label: "Ürünler" },
-                { to: "/ekibimiz", label: "Ekibimiz" },
                 { to: "/is-ortaklarimiz", label: "İş Ortaklarımız" },
+                { to: "/ekibimiz", label: "Ekibimiz" },
+                { to: "/hakkimizda", label: "Hakkımızda" },
+                { to: "/iletisim", label: "İletişim" },
               ].map((link) => (
                 <li key={link.to}>
                   <Link
