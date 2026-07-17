@@ -1,0 +1,8 @@
+Project,SourcePath,SourceSectionOrLine,ProposedDisposition,CanonicalDestination,ArchiveSourceAfterMigration,ExecutedOutcome
+yigiter-farm-showcase,README.md,Local Development,ACTIVATE_QUALITY_GATE,.ai/QUALITY_GATES.md,NO,DONE - npm run lint (baseline recorded) + npm run build (verified clean); no tests exist
+yigiter-farm-showcase,git history,authors,ACTIVATE_PROJECT_CONTEXT,.ai/PROJECT_CONTEXT.md,NO,DONE - platform-generated provenance recorded
+yigiter-farm-showcase,cross-project reference,role,ACTIVATE_PROJECT_CONTEXT,.ai/PROJECT_CONTEXT.md,NO,DONE - read-only reference role recorded with public-safe wording (no private repository named)
+yigiter-farm-showcase,repo root,lockfiles,UNRESOLVED_PRESERVE,owner decision,NO,PRESERVED - follow-up #3 in MIGRATION_UNRESOLVED.md; no file changes
+yigiter-farm-showcase,index.html,head (social-image paths),REWRITE_FOR_ACCURACY -> overridden to KEEP + follow-up,index.html,NO,NOT EDITED (public repo; note-only ruling) - follow-up #2 in MIGRATION_UNRESOLVED.md
+yigiter-farm-showcase,repo root,license,UNRESOLVED_PRESERVE,owner decision,NO,PRESERVED - follow-up #1 in MIGRATION_UNRESOLVED.md
+yigiter-farm-showcase,package.json,name,KEEP_ORDINARY_DOCUMENTATION,,NO,KEPT - cosmetic note as follow-up #4
